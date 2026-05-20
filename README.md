@@ -85,3 +85,11 @@ and serves the package through the overlay.
 Every tagged release of [pipekit/cli](https://github.com/pipekit/cli) pushes an
 updated `pkgs/pipekit/default.nix` to this repo via goreleaser's `nix`
 publisher. `pkgs/pipekit/default.nix` is generated; do not edit it by hand.
+
+## Contributing to the nixpkgs entry
+
+The hand-maintained source for the nixpkgs derivation
+(`pkgs/by-name/pi/pipekit/package.nix` upstream) lives at
+[`nixpkgs/package.nix`](./nixpkgs/package.nix) in this repo. See
+[`nixpkgs/README.md`](./nixpkgs/README.md) for the first-PR workflow and the
+release-time bump flow.
