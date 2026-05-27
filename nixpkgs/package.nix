@@ -3,6 +3,7 @@
   stdenvNoCC,
   fetchurl,
   nix-update-script,
+  versionCheckHook,
 }:
 
 let
@@ -47,6 +48,10 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     install -Dm755 pipekit -t $out/bin
     runHook postInstall
   '';
+
+  doInstallCheck = true;
+  nativeInstallCheckInputs = [ versionCheckHook ];
+  versionCheckProgramArg = "version";
 
   passthru.updateScript = nix-update-script { };
 
