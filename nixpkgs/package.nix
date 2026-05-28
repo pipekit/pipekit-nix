@@ -16,14 +16,6 @@ let
       suffix = "linux_arm64";
       hash = lib.fakeHash;
     };
-    "x86_64-darwin" = {
-      suffix = "darwin_amd64";
-      hash = lib.fakeHash;
-    };
-    "aarch64-darwin" = {
-      suffix = "darwin_arm64";
-      hash = lib.fakeHash;
-    };
   };
   inherit (stdenvNoCC.hostPlatform) system;
   source =
