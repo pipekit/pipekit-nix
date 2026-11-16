@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "1v1mwq34n535sha55qnifmlpb46qx0fjfcix53v7c7dv8z8raa55";
-    aarch64-linux = "1900aa8c3cz1pp0axlz71bnhlal16djb6phgg98q4d515cvclrff";
-    x86_64-darwin = "1n5z62fd4s4hxgm8qw2y6c386z9kqja6g55527zx2k0y8kakr5kn";
-    aarch64-darwin = "01pljlqmckammgw8bvc9ascx1h014pvw18npcfzmmak5l0dcyx23";
+    x86_64-linux = "0y1x95p6m2dc86bi37pxk56qmq7gchi3wj715sv7bnk2p1709alp";
+    aarch64-linux = "0bmr4vgiyiviwzk99yf1x5s77lir8mp1k5g55j0jx6n3q2nkpaw2";
+    x86_64-darwin = "019z9cg0vbnjw7niwybhmfrsf22h4ncq21ggzdrp7pbx8qfvjjqy";
+    aarch64-darwin = "0m19ns9rhqafhjq5qxvkdd13gamf1is5vd8z3gbsg5ck32xb2wn2";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/pipekit/cli/releases/download/v8.6.1/cli_8.6.1_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/pipekit/cli/releases/download/v8.6.1/cli_8.6.1_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/pipekit/cli/releases/download/v8.6.1/cli_8.6.1_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/pipekit/cli/releases/download/v8.6.1/cli_8.6.1_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/pipekit/cli/releases/download/v8.6.2/cli_8.6.2_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/pipekit/cli/releases/download/v8.6.2/cli_8.6.2_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/pipekit/cli/releases/download/v8.6.2/cli_8.6.2_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/pipekit/cli/releases/download/v8.6.2/cli_8.6.2_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "pipekit";
-  version = "8.6.1";
+  version = "8.6.2";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
